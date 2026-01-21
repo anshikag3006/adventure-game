@@ -10,7 +10,7 @@ class Settings(BaseSettings):
 
     ALLOWED_ORIGINS: str = ""
 
-    OPENAI_API_KEY: str
+    GROQ_API_KEY: str
 
     @field_validator("ALLOWED_ORIGINS")
     def parse_allowed_origins(cls, v: str) -> List[str]:
@@ -20,5 +20,6 @@ class Settings(BaseSettings):
         env_file = ".env"
         env_file_encoding = "utf-8"
         case_sensitive = True
+        extra = "ignore"
 
 settings = Settings()
